@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人資歷</title>
+    <link rel="stylesheet" href="style-個人資歷.css">
+</head>
+<body>
+  <div class="main-wrapper">
+        
+        <header class="profile-header">
+            <div class="profile-content hidden-element">
+                <div class="image-content hidden-element">
+                <img src="image/72106.jpg" alt="職遊旅人卡展示圖">
+            </div>
+                <div class="profile-info hidden-element">
+                    <h1 class="main-title">賴淑惠 <span class="en-name">Iris Lai</span></h1>
+                    <div class="gold-line hidden-element"></div>
+                    
+                    <div class="education-box hidden-element">
+                        <h3><span class="icon"></span> 學歷</h3>
+                        <ul>
+                            <li>國立中正大學 成人及繼續教育學系碩士</li>
+                            <li>國立台中教育大學 幼兒教育學系早期療育碩士</li>
+                        </ul>
+                    </div>
+
+                    <div class="cert-box hidden-element">
+                        <h3><span class="icon"></span> 專門職業證書</h3>
+                        <p>語言治療師證照 (語言字第000036號)</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section-block">
+            <h2 class="section-title">職涯諮詢師</h2>
+            <div class="content-card beige-card hidden-element">
+                <div class="service-item hidden-element">
+                    <h4>˙工作項目</h4>
+                    <p>一對一個別職涯諮詢 (實體/線上)</p>
+                    <p>以職涯探索與發展為主題進行演講</p>
+                </div>
+                <div class="service-item hidden-element">
+                    <h4>˙鎖定服務之族群</h4>
+                    <p>婦女、中高齡者、經濟弱勢/原住民青年、身障者、更生人</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2 class="section-title">現職</h2>
+            <div class="content-card white-card hidden-element">
+                <ul class="job-list">
+                    <li><strong>社區關懷據點</strong> — 外聘講師</li>
+                    <li><strong>醫療院所 / 學校 / 社福機構</strong> — 語言治療師</li>
+                </ul>
+            </div>
+        </section>
+        <section class="section-block">
+            <h2 class="section-title">工作經歷</h2>    
+            <div class="experience-grid hidden-element">
+                <div class="exp-column hidden-element">
+                    <div class="exp-card hidden-element">
+                        <h3 class="exp-title">【助人工作專業】</h3>
+                        <ul>
+                            <li>身心障礙者職業訓練中心 職業輔導評量員</li>
+                            <li>身心障礙者職業訓練中心 社工員</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="exp-column hidden-element">
+                    <div class="exp-card hidden-element">
+                        <h3 class="exp-title">【語言治療專業】</h3>
+                        <ul>
+                            <li>教學醫院語言治療師 & 實習生督導老師</li>
+                            <li>復健科診所 語言治療師</li>
+                            <li>兒童文教基金會 聽語教師 & 中心主任</li>
+                            <li>特教專業團隊 外聘語言治療師</li>
+                            <li>復健協會 外聘語言治療師</li>
+                            <li>技術學院 外聘語言治療師</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>Iris Lai Professional Profile</p>
+    </footer>
+    <script>
+    // 等待網頁內容載入完成
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. 設定觀察員的選項 (Observer Options)
+        const observerOptions = {
+            root: null,          // 視窗本身
+            rootMargin: '0px',   // 邊界不縮放
+            threshold: 0.1       // 當元素出現 10% 在畫面上時，觸發動畫
+        };
+
+        // 2. 建立觀察員 (The Observer)
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // 如果元素進入畫面 (isIntersecting 為 true)
+                if (entry.isIntersecting) {
+                    // 幫該元素加上 'show' 這個 class
+                    entry.target.classList.add('show');
+                    
+                    // (選用) 動畫跑完後，就不再觀察它了，節省效能
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        // 3. 抓取所有擁有 .hidden-element 的元素
+        const hiddenElements = document.querySelectorAll('.hidden-element');
+        
+        // 4. 命令觀察員開始觀察這些元素
+        hiddenElements.forEach((el) => observer.observe(el));
+    });
+</script>
+</body>
+</html>

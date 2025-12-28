@@ -1,0 +1,261 @@
+/* 全域設定 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* 確保 padding 不會撐大寬度 */
+    font-family: "Microsoft JhengHei", sans-serif;
+}
+
+body {
+    background-color: #1B3C53; /* 深藍色背景 */
+    color: white;
+}
+
+/* --------------------------------------------------------
+   Header 設定 (基於您提供的程式碼進行配色與細節改良)
+-------------------------------------------------------- */
+header {
+    background-color: #152e40; /* 比背景稍深一點的藍，增加層次 */
+    height: 80px;
+    width: 100%;
+    position: relative; /* 保留您的定位方式 */
+    border-bottom: 2px solid #D4AF37; /* 金色底線 */
+    z-index: 100;
+}
+
+h1 {
+    color: #D4AF37; /* 金色標題 */
+    position: absolute;
+    left: 120px;
+    top: 0;
+    line-height: 80px;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 80px;
+    list-style: none; /* 移除預設圓點 */
+}
+
+header li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+/* 最後一個 li 不需要右邊距 */
+header li:last-child {
+    margin-right: 0;
+}
+
+header a {
+    color: #f0f0f0; /* 米白色連結 */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #D4AF37; /* 滑鼠移過去變金色 */
+    text-decoration: none; /* 移除底線，改用顏色變化比較現代 */
+    border-bottom: 2px solid #D4AF37; /* 自製底線效果 */
+    padding-bottom: 5px;
+}
+
+/* --------------------------------------------------------
+   Hero Section (主視覺區)
+-------------------------------------------------------- */
+.hero {
+    height: 80vh; /* 佔據螢幕高度的 80% */
+    display: flex; /* 使用 Flexbox 讓內容置中 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(27, 60, 83, 0.8), rgba(27, 60, 83, 0.8)), url('72106.jpg'); 
+    /* 上面這行如果沒有背景圖，會顯示深藍色漸層。若有圖片會疊加在藍色濾鏡下 */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: #D4AF37; /* 金色 */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero .description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* Call to Action 按鈕 */
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #D4AF37;
+    color: #1B3C53;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    transform: translateY(-3px); /* 微微上浮效果 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --------------------------------------------------------
+   Features Section (卡片區)
+-------------------------------------------------------- */
+.features {
+    padding: 60px 5%;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #D4AF37;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* 標題下的小金線裝飾 */
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #D4AF37;
+    margin: 15px auto 0;
+}
+
+.card-container {
+    display: flex; /* 使用 Flexbox 排列卡片 */
+    justify-content: space-between;
+    flex-wrap: wrap; /* 允許換行 */
+    gap: 20px;
+}
+
+.card {
+    background-color: #F5F5DC; /* 米色背景 */
+    color: #333; /* 深色文字 */
+    flex: 1 1 250px; /* 彈性寬度，最小250px */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    border-top: 5px solid #D4AF37; /* 卡片頂部金條 */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* 卡片懸停效果 */
+}
+
+.card h3 {
+    color: #1B3C53; /* 深藍色標題 */
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.card-link {
+    color: #1B3C53;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #1B3C53;
+}
+
+/* --------------------------------------------------------
+   Footer
+-------------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #152e40;
+    color: #aaa;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* --------------------------------------------------------
+   RWD 響應式設計 (手機版適配)
+   影片中強調的 Media Query 技巧
+-------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    /* Header 改為直式排列 */
+    header {
+        height: auto;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        position: static; /* 取消絕對定位 */
+        display: block;
+        line-height: 60px;
+        margin-bottom: 0;
+    }
+
+    header ul {
+        position: static; /* 取消絕對定位 */
+        display: block;
+        line-height: 40px;
+        padding-bottom: 10px;
+    }
+
+    header li {
+        display: block; /* 連結變為塊狀，方便手指點擊 */
+        margin: 5px 0;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .card-container {
+        flex-direction: column; /* 卡片垂直排列 */
+    }
+}
+.hidden-element {
+    opacity: 0;               /* 透明度 0 (看不見) */
+    transform: translateY(50px); /* 往下移 50px */
+    transition: all 0.8s ease-out; /* 動畫時間 0.8秒 */
+}
+
+/* 2. 顯示狀態：當 JavaScript 加入這個 class 時，元素會浮現 */
+.hidden-element.show {
+    opacity: 1;               /* 透明度變回 1 (看見了) */
+    transform: translateY(0); /* 回到原本位置 */
+}
+
+/* (選用) 讓卡片依序出現的延遲效果，增加層次感 */
+.card:nth-child(2) { transition-delay: 0.2s; } /* 第二張卡片慢 0.2秒 */
+.card:nth-child(3) { transition-delay: 0.4s; } /* 第三張卡片慢 0.4秒 */
+.card:nth-child(4) { transition-delay: 0.6s; } /* 第四張卡片慢 0.6秒 */

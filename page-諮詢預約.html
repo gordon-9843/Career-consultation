@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>諮詢預約</title>
+    <link rel="stylesheet" href="style-諮詢預約.css">
+</head>
+<body>
+
+    <main class="booking-page">
+        <div class="booking-card hidden-element">
+            <h2 class="page-title">一對一職涯諮詢預約</h2>
+            <div class="gold-divider hidden-element"></div>
+            
+            <p class="intro-text">
+                目前諮詢服務透過 LINE 官方帳號進行預約。
+            </p>
+
+            <div class="process-steps hidden-element">
+                <div class="step">
+                    <div class="step-icon hidden-element">1</div>
+                    <p>點擊下方按鈕<br>加入好友</p>
+                </div>
+                <div class="step-arrow hidden-element">➜</div>
+                <div class="step hidden-element">
+                    <div class="step-icon hidden-element">2</div>
+                    <p>傳送貼圖<br>或簡單問候</p>
+                </div>
+                <div class="step-arrow hidden-element">➜</div>
+                <div class="step hidden-element">
+                    <div class="step-icon hidden-element">3</div>
+                    <p>預約時段<br>開始諮詢</p>
+                </div>
+            </div>
+
+            <div class="action-area hidden-element">
+                <a href="https://lin.ee/jj4rjfr" target="_blank" class="line-button">
+                    <span class="line-icon">LINE</span> 
+                    加入官方帳號預約
+                </a>
+                <p class="note-text">點擊連結將自動開啟 LINE App</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright © 2025 Iris Lai Career Counseling. All Rights Reserved.</p>
+    </footer>
+    <script>
+    // 等待網頁內容載入完成
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. 設定觀察員的選項 (Observer Options)
+        const observerOptions = {
+            root: null,          // 視窗本身
+            rootMargin: '0px',   // 邊界不縮放
+            threshold: 0.1       // 當元素出現 10% 在畫面上時，觸發動畫
+        };
+
+        // 2. 建立觀察員 (The Observer)
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // 如果元素進入畫面 (isIntersecting 為 true)
+                if (entry.isIntersecting) {
+                    // 幫該元素加上 'show' 這個 class
+                    entry.target.classList.add('show');
+                    
+                    // (選用) 動畫跑完後，就不再觀察它了，節省效能
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        // 3. 抓取所有擁有 .hidden-element 的元素
+        const hiddenElements = document.querySelectorAll('.hidden-element');
+        
+        // 4. 命令觀察員開始觀察這些元素
+        hiddenElements.forEach((el) => observer.observe(el));
+    });
+</script>
+</body>
+</html>

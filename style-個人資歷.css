@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Noto Serif TC', "Microsoft JhengHei", serif;
+}
+
+body {
+    background-color: #1B3C53; /* 使用者指定的深藍底色 */
+    background-image: linear-gradient(135deg, #1B3C53 0%, #152e40 100%); /* 增加一點點漸層質感 */
+    color: #ffffff;
+    line-height: 1.7;
+    padding-bottom: 60px;
+}
+
+/* 外層容器 */
+.main-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+/* -------------------------------------------
+   Header 個人主視覺
+------------------------------------------- */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 70px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
+}
+
+img {
+  max-width: 30%; /* 最大不超過父容器寬度 */
+  height: auto;    /* 保持比例，避免拉伸 */
+  display: block;   /* 先轉成區塊元素 */
+  margin: 0 auto;   /* 左右間距自動，達成居中 */
+  width: 50%;
+}
+/* 個人資訊區域 */
+.profile-info {
+    flex: 1;
+}
+
+.main-title {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.en-name {
+    font-size: 1.5rem;
+    color: #aaa281;
+    font-weight: 300;
+    display: block;
+    margin-top: 5px;
+}
+
+.gold-line {
+    width: 60px;
+    height: 4px;
+    background-color: #D4AF37;
+    margin: 20px 0 30px 0;
+    border-radius: 2px;
+}
+
+/* 學歷與證書 Grid */
+.credentials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.credential-item h3 {
+    font-size: 1.1rem;
+    color: #aaa281;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.credential-item ul li, .credential-item p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* -------------------------------------------
+   共用區塊樣式
+------------------------------------------- */
+.section-block {
+    margin-bottom: 60px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #aaa281;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.section-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(to right, #D4AF37, transparent);
+    margin-left: 15px;
+    opacity: 0.5;
+}
+
+/* -------------------------------------------
+   內容卡片樣式
+------------------------------------------- */
+.content-card {
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid #D4AF37;
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 米色卡片 */
+.card-beige {
+    background-color: #FDFCF5;
+    color: #2c3e50;
+}
+
+/* 白色卡片 */
+.card-white {
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+.service-group {
+    margin-bottom: 20px;
+}
+
+.service-group:last-child {
+    margin-bottom: 0;
+}
+
+.service-group h4 {
+    color: #8b5a2b;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-left: 4px solid #D4AF37;
+    padding-left: 10px;
+}
+
+.service-group p {
+    margin-bottom: 5px;
+    padding-left: 15px;
+}
+
+/* 現職列表 */
+.job-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-wrap: wrap;
+}
+.job-list li:last-child {
+    border-bottom: none;
+}
+.job-role {
+    font-weight: bold;
+    color: #1B3C53;
+    min-width: 150px;
+}
+
+/* -------------------------------------------
+   工作經歷 (透明卡片)
+------------------------------------------- */
+.experience-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.exp-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+}
+
+.exp-title {
+    background-color: #aaa281;
+    color: #1B3C53;
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.exp-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: #f0f0f0;
+}
+
+.exp-list li::before {
+    content: "✦";
+    color: #D4AF37;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.9rem;
+}
+
+/* -------------------------------------------
+   Footer
+------------------------------------------- */
+footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* -------------------------------------------
+   RWD 手機版適配
+------------------------------------------- */
+@media screen and (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .gold-line {
+        margin: 15px auto;
+    }
+
+    .credential-item h3 {
+        justify-content: center;
+    }
+
+    .experience-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 確保手機版圖片也是 250px */
+    .profile-image-box img {
+        width: 250px; 
+        height: 250px;
+    }
+}
+.hidden-element {
+    opacity: 0;               
+    transform: translateY(50px); 
+    transition: all 0.8s ease-out; 
+}
+.hidden-element.show {
+    opacity: 1;               
+    transform: translateY(0); 
+}
+.card:nth-child(2) { transition-delay: 0.2s; } 
+.card:nth-child(3) { transition-delay: 0.4s; } 
+.card:nth-child(4) { transition-delay: 0.6s; } 

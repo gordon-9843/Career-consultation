@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡牌簡介</title>
+    <link rel="stylesheet" href="style-卡牌簡介.css">
+</head>
+<body>
+
+    <header>
+        <div class="container hidden-element">
+            <h1>卡牌簡介</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="card-section">
+            <div class="text-content hidden-element">
+                <h2>職遊旅人卡</h2>
+                <p>詳列百大職業的所屬學群、對應的職業興趣人格、所須進行的活動與具備的知識，擴展對於職業的認知。透過精美的插畫與詳細的數據分析，讓探索職涯不再是枯燥的過程，而是一場充滿驚喜的旅程。</p>
+            </div>
+            <div class="image-content hidden-element">
+                <img src="image/1.jpg" alt="職遊旅人卡展示圖">
+            </div>
+        </section>
+
+        <section class="card-section">
+            <div class="text-content hidden-element">
+                <h2>價值導航卡</h2>
+                <p>深入探索內在價值觀，協助使用者釐清在工作與生活中真正重視的核心信念。這套卡牌能引導你做出不後悔的選擇，在迷惘的職涯十字路口找到屬於自己的方向，並建立穩固的決策依據。</p>
+            </div>
+            <div class="image-content hidden-element">
+                <img src="image/3.jpeg" alt="價值導航卡展示圖">
+            </div>
+        </section>
+
+        <section class="card-section">
+            <div class="text-content hidden-element">
+                <h2>職能盤點卡</h2>
+                <p>協助盤點個人優勢能力，將抽象的經驗轉化為具體的職能關鍵字。無論是求職面試、履歷撰寫或是自我提升規劃，都能透過此卡牌快速掌握自己的強項與待加強之處，提升職場競爭力。</p>
+            </div>
+            <div class="image-content hidden-element">
+                <img src="image/2.jpg" alt="職能盤點卡展示圖">
+            </div>
+        </section>
+
+    </main>
+<script>
+    // 等待網頁內容載入完成
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. 設定觀察員的選項 (Observer Options)
+        const observerOptions = {
+            root: null,          // 視窗本身
+            rootMargin: '0px',   // 邊界不縮放
+            threshold: 0.1       // 當元素出現 10% 在畫面上時，觸發動畫
+        };
+
+        // 2. 建立觀察員 (The Observer)
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // 如果元素進入畫面 (isIntersecting 為 true)
+                if (entry.isIntersecting) {
+                    // 幫該元素加上 'show' 這個 class
+                    entry.target.classList.add('show');
+                    
+                    // (選用) 動畫跑完後，就不再觀察它了，節省效能
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        // 3. 抓取所有擁有 .hidden-element 的元素
+        const hiddenElements = document.querySelectorAll('.hidden-element');
+        
+        // 4. 命令觀察員開始觀察這些元素
+        hiddenElements.forEach((el) => observer.observe(el));
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+/* =========================================
+   全域基本設定 (沿用)
+   ========================================= */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft JhengHei", sans-serif;
+}
+
+body {
+    background-color: #1B3C53; /* 深藍色背景 */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 確保 footer 在最下方 */
+}
+
+/* =========================================
+   Header 設定 (沿用)
+   ========================================= */
+header {
+    background-color: #152e40;
+    height: 80px;
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #D4AF37;
+    z-index: 100;
+}
+
+header h1 a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+header h1 {
+    position: absolute;
+    left: 120px;
+    top: 0;
+    line-height: 80px;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 80px;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+header li:last-child {
+    margin-right: 0;
+}
+
+header a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+header a:hover, header a.active {
+    color: #D4AF37;
+    border-bottom: 2px solid #D4AF37;
+    padding-bottom: 5px;
+}
+
+.booking-page {
+    flex: 1; 
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center;     /* 垂直置中 */
+    padding: 40px 20px;
+}
+
+/* 米色大卡片 */
+.booking-card {
+    background-color: #F5F5DC; /* 米色背景 */
+    color: #333;               /* 深色文字 */
+    width: 100%;
+    max-width: 600px;          /* 限制最大寬度 */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    border-top: 6px solid #D4AF37; /* 金色頂部裝飾 */
+}
+
+.page-title {
+    color: #1B3C53;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.gold-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #D4AF37;
+    margin: 0 auto 30px auto;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* 預約流程步驟 */
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #1B3C53;
+    color: #D4AF37;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.step-arrow {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+/* LINE 按鈕區域 */
+.action-area {
+    margin-top: 20px;
+}
+
+.line-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #06C755; /* LINE 官方綠色 */
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(6, 199, 85, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.line-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(6, 199, 85, 0.6);
+    background-color: #05b34c;
+}
+
+.line-icon {
+    font-weight: 900;
+    margin-right: 10px;
+    font-family: sans-serif;
+}
+
+.note-text {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #152e40;
+    color: #aaa;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    margin-top: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+  
+    header {
+        height: auto;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    header h1 {
+        position: static;
+        display: block;
+        line-height: 60px;
+    }
+
+    header ul {
+        position: static;
+        display: block;
+        line-height: 40px;
+        padding-bottom: 10px;
+    }
+
+    header li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    
+    .booking-card {
+        padding: 30px 20px;
+    }
+
+    .process-steps {
+        font-size: 0.9rem;
+    }
+    
+    .line-button {
+        width: 100%; 
+        font-size: 1.1rem;
+    }
+}
+.hidden-element {
+    opacity: 0;               
+    transform: translateY(50px); 
+    transition: all 0.8s ease-out; 
+}
+.hidden-element.show {
+    opacity: 1;               
+    transform: translateY(0); 
+}
+.card:nth-child(2) { transition-delay: 0.2s; } 
+.card:nth-child(3) { transition-delay: 0.4s; } 
+.card:nth-child(4) { transition-delay: 0.6s; } 
