@@ -90,36 +90,37 @@
         <p>Iris Lai Professional Profile</p>
     </footer>
     <script>
-    // 等待網頁內容載入完成
+    
     document.addEventListener("DOMContentLoaded", function() {
         
-        // 1. 設定觀察員的選項 (Observer Options)
+       
         const observerOptions = {
-            root: null,          // 視窗本身
-            rootMargin: '0px',   // 邊界不縮放
-            threshold: 0.1       // 當元素出現 10% 在畫面上時，觸發動畫
+            root: null,          
+            rootMargin: '0px',   
+            threshold: 0.1      
         };
 
-        // 2. 建立觀察員 (The Observer)
+        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
-                // 如果元素進入畫面 (isIntersecting 為 true)
+               
                 if (entry.isIntersecting) {
-                    // 幫該元素加上 'show' 這個 class
+                    
                     entry.target.classList.add('show');
                     
-                    // (選用) 動畫跑完後，就不再觀察它了，節省效能
+                    
                     observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
 
-        // 3. 抓取所有擁有 .hidden-element 的元素
+        
         const hiddenElements = document.querySelectorAll('.hidden-element');
         
-        // 4. 命令觀察員開始觀察這些元素
+        
         hiddenElements.forEach((el) => observer.observe(el));
     });
 </script>
 </body>
+
 </html>
