@@ -1,6 +1,4 @@
-/* =========================================
-   全域基本設定 (沿用)
-   ========================================= */
+
 * {
     padding: 0;
     margin: 0;
@@ -16,9 +14,7 @@ body {
     min-height: 100vh; /* 確保 footer 在最下方 */
 }
 
-/* =========================================
-   Header 設定 (沿用)
-   ========================================= */
+
 header {
     background-color: #152e40;
     height: 80px;
@@ -75,22 +71,22 @@ header a:hover, header a.active {
 .booking-page {
     flex: 1; 
     display: flex;
-    justify-content: center; /* 水平置中 */
-    align-items: center;     /* 垂直置中 */
+    justify-content: center;
+    align-items: center;    
     padding: 40px 20px;
 }
 
-/* 米色大卡片 */
+
 .booking-card {
-    background-color: #F5F5DC; /* 米色背景 */
-    color: #333;               /* 深色文字 */
+    background-color: #F5F5DC;
+    color: #333;             
     width: 100%;
-    max-width: 600px;          /* 限制最大寬度 */
+    max-width: 600px;         
     padding: 50px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     text-align: center;
-    border-top: 6px solid #D4AF37; /* 金色頂部裝飾 */
+    border-top: 6px solid #D4AF37; 
 }
 
 .page-title {
@@ -113,7 +109,7 @@ header a:hover, header a.active {
     color: #555;
 }
 
-/* 預約流程步驟 */
+
 .process-steps {
     display: flex;
     justify-content: space-between;
@@ -163,7 +159,7 @@ header a:hover, header a.active {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #06C755; /* LINE 官方綠色 */
+    background-color: #06C755;
     color: white;
     font-size: 1.3rem;
     font-weight: bold;
@@ -255,4 +251,5 @@ footer {
 }
 .card:nth-child(2) { transition-delay: 0.2s; } 
 .card:nth-child(3) { transition-delay: 0.4s; } 
+
 .card:nth-child(4) { transition-delay: 0.6s; } 
